@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Database Administrator</title>
+    <style>
+        body {
+             font-family: Arial, sans-serif;
+             background-color: #ffffff;
+         }
+ 
+         .banner{
+         background-color: #c2eae0;
+         
+         position: fixed;
+         top:1px;
+         left:1px;
+         padding: 5px;
+         width: 100%;
+         
+         }
+         .navbar{
+         
+         font-size: 16px;
+         margin-left: 1200px;
+        
+         justify-content: space-between;
+         }
+ 
+         .logo{
+         width:60px ;
+         cursor:pointer;
+         z-index: 1;
+         left: 50px;
+         top:2px;
+         }
+         .edu{
+         font-size: 22px;
+         position: absolute;
+         top:20px;
+         left: 120px;
+         color: #3f5c79;
+         
+         }
+         h2 {
+             font-family: 'Courier New', Courier, monospace;
+             margin: 0;
+             font-size: 60px;
+            
+             
+             
+         }
+ 
+         .navbar ul li{
+         list-style: none;
+         display: inline-block;
+         margin: 0 20px;
+         position: relative;
+         }
+         .navbar ul li a{
+         text-decoration: none;
+         color:#466EB6;
+         text-transform: uppercase;
+         font-weight: 600;
+         }
+         .navbar ul li::after{
+         content:'';
+         height:3px;
+         width:0;
+         background: #466EB6;
+         position: absolute;
+         left: 0;
+         bottom:-10px;
+         transition: 0.5s;
+         }
+         .navbar ul li:hover::after {
+        width: 100%;
+         
+         }
+
+         img {
+            width: 600px;
+            position: fixed;
+            left: 1000px;
+            top:150px;
+            z-index: -1;    
+        }
+
+        .container {
+            
+            position: fixed;
+            
+            left: -20px;
+            padding: 50px;
+            text-align: center;
+            
+           
+        }
+
+        h1 {
+            font-family: 'Courier New', Courier;
+            margin: 0;
+            font-size: 50px;
+            color: #466EB6;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            
+        }
+
+        .dba-btn {
+            display: block;
+            width: 43%;
+            padding: 10px;
+            background-color: #d9dfde;
+            color: #000000;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            border: 2px solid #2A454E;
+            text-align: center;
+            margin-top: 30px;
+            margin-left: 30px;
+            cursor: pointer;
+            
+        }
+
+        .dba-btn:hover {
+            background-color: #2A454E;
+            color: #fff;
+        }
+        </style>
+</head>
+<body>
+
+    <div class="banner">
+        <div class="navbar">
+            <img src="../static/images/cap.png" class="logo">
+            <h2 class="edu" >EduTech</h2>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">about us</a></li>
+                <li><a href="/services">service</a></li>
+                
+            </ul>
+        </div>
+        
+        <div class="container">
+            <h1 >Database Administrator Privileges</h1>
+            <br/>
+            <br/>
+            <button onclick="window.location.href='/register'" class="dba-btn">Register New User</button>
+            <button onclick="window.location.href='/deleteqp'" class="dba-btn">Delete a Question Paper from Database</button>
+            <button onclick="window.location.href='/users'" class="dba-btn">Authorized User Details</button>
+            <button onclick="window.location.href='/qpapers'" class="dba-btn">Question Papers in Database</button>
+        </div>

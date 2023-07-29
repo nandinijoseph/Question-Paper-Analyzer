@@ -1,0 +1,19 @@
+<!-- qpapers.html -->
+<table>
+    <thead>
+      <tr>
+        <th>Subject</th>
+        <th>Part A</th>
+        <th>Part B</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in rows %}
+      <tr>
+        <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>

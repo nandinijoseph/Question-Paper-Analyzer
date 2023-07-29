@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EduTech - Question Paper</title>
+    <style>
+        /* Add your CSS styling here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+        }
+
+        .banner{
+        background-color: #c2eae0;
+        
+        position: fixed;
+        top:1px;
+        left:1px;
+        padding: 5px;
+        width: 100%;
+        
+        }
+        .navbar{
+        
+        font-size: 16px;
+        margin-left: 1200px;
+       
+        justify-content: space-between;
+        }
+
+        .logo{
+        width:60px ;
+        cursor:pointer;
+        z-index: 1;
+        left: 50px;
+        top:2px;
+        }
+        .edu{
+        font-size: 22px;
+        position: absolute;
+        top:20px;
+        left: 120px;
+        color: #3f5c79;
+        
+        }
+        h2 {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            font-size: 60px;
+           
+            
+            
+        }
+
+        .navbar ul li{
+        list-style: none;
+        display: inline-block;
+        margin: 0 20px;
+        position: relative;
+        }
+        .navbar ul li a{
+        text-decoration: none;
+        color:#466EB6;
+        text-transform: uppercase;
+        font-weight: 600;
+        }
+        .navbar ul li::after{
+        content:'';
+        height:3px;
+        width:0;
+        background: #466EB6;
+        position: absolute;
+        left: 0;
+        bottom:-10px;
+        transition: 0.5s;
+        }
+        .navbar ul li:hover::after {
+       width: 100%;
+        
+        }
+
+        img {
+            width: 600px;
+            position: fixed;
+            left: 1000px;
+            top:150px;
+            z-index: -1;
+           
+            
+            
+        }
+    
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 20px ;
+            color: black;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    
+        h5 {
+            text-align: center;
+            margin-bottom: -30px;
+            color: black;
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    
+        h6 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: black;
+            font-size: 19px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    
+
+        h3 {
+            color: #000000;
+            margin-top: 20px;
+            margin-left: 500px;
+            text-align:justify;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    
+        p {
+            margin-bottom: 10px;
+            color: #555;
+            margin-left: 50px ;
+            
+        }
+    
+        .container {
+            max-width: 1000px;
+            margin: 100px 200px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border: 2px solid #ddd;
+            
+        }
+    
+        .go-home-btn {
+            display: block;
+            width: 20%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            text-align: center;
+            margin-top: 20px;
+            cursor: pointer;
+            border: none;
+        }
+    
+        .go-home-btn:hover {
+            background-color: #142b15;
+
+        }
+    </style>
+    
+</head>
+<body>
+
+    <div class="banner">
+        <div class="navbar">
+            <img src="../static/images/cap.png" class="logo">
+            <h2 class="edu" >EduTech</h2>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">about us</a></li>
+                <li><a href="/services">service</a></li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <h5>SCHOOL OF ENGINEERING</h5>
+        <h6> B.TECH DEGREE SAMPLE QUESTION PAPER </h6>
+        <h1>{{ sub }}</h1>
+        <div>
+            <h3>PART A </h3>
+            <div id="partA-content">
+                <!-- Display the contents of faq -->
+                {% for line in part_a_questions.split('\n') %}
+                    <p>{{ line }}</p>
+                {% endfor %}
+            </div>
+        </div>
+        <div>
+            <h3>PART B</h3>
+            <div id="partB-content">
+                <!-- Display the contents of faq -->
+                {% for line in part_b_questions.split('\n') %}
+                    <p>{{ line }}</p>
+                {% endfor %}
+            </div>
+        </div>
+        <button onclick="window.location.href='/home'" class="go-home-btn">Back</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EduTech - Question Paper Analyzer</title>
+    <style>
+
+
+    .banner{
+        background-color: #c2eae0;
+        
+        position: fixed;
+        padding: 5px;
+        width: 100%;
+        
+    }
+    .navbar{
+        
+        font-size: 16px;
+        margin-left: 1200px;
+       
+        justify-content: space-between;
+    }
+    
+    .logo{
+        width:60px ;
+        cursor:pointer;
+        z-index: 1;
+        left: 50px;
+        top:2px;
+    }
+    .edu{
+        font-size: 22px;
+        position: absolute;
+        top:20px;
+        left: 120px;
+        color: #3f5c79;
+        
+    }
+    h2 {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            font-size: 60px;
+           
+            
+            
+        }
+
+
+    .navbar ul li{
+        list-style: none;
+        display: inline-block;
+        margin: 0 20px;
+        position: relative;
+    }
+    .navbar ul li a{
+        text-decoration: none;
+        color:#466EB6;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+    .navbar ul li::after{
+        content:'';
+        height:3px;
+        width:0;
+        background: #466EB6;
+        position: absolute;
+        left: 0;
+        bottom:-10px;
+        transition: 0.5s;
+    }
+    .navbar ul li:hover::after {
+       width: 100%;
+        
+    }
+
+
+
+
+
+        body {
+            background-color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            
+        }    
+
+        .container {
+            max-width: 700px;
+            position: fixed;
+            bottom: 70px;
+            left: 120px;
+            padding: 50px;
+            text-align: center;
+            
+           
+        }
+
+        h1 {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            font-size: 60px;
+            color: #466EB6;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            
+        }
+
+        p {
+            color: #7d605e;
+            font-size: 18px;
+            margin-bottom: 20px;
+            
+        }
+
+        select {
+            border:2px solid #466EB6 ;
+            color: #175cdd;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-top: 13px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #45a049;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #a5bda5;
+        }
+        img {
+            width: 1430px;
+            position: fixed;
+            left: 600px;
+            top:40px;
+            z-index: -1;
+           
+            
+            
+        }
+    </style>
+</head>
+<body>
+    <img src="../static/images/pic2.jpg">
+
+    <div class="banner">
+        <div class="navbar">
+            <img src="../static/images/cap.png" class="logo">
+            <h2 class="edu" >EduTech</h2>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">about us</a></li>
+                <li><a href="/services">service</a></li>
+                
+                
+            </ul>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+        <h1 >Question Paper Analyzer</h1>
+        <p>Last minute preps? Do not fear! Help is here!</p>
+        <p>Important Topics from Previous Question Papers at your fingertips 💜</p>
+        
+        <form>
+            <select id="semester">
+                <option disabled selected value="">Choose a Semester</option>
+                <option value="3">Semester 3</option>
+                <option value="4">Semester 4</option>
+                <option value="5">Semester 5</option>
+                <option value="6">Semester 6</option>
+                <option value="7">Semester 7</option>
+                <option value="8">Semester 8</option>
+                <!-- Add more semester options as needed -->
+            </select>
+        </form>
+        <p>Choose a subject to start learning! 😎</p>
+        <form action="/home" method="POST">
+            <select name="subject" id="subject" >
+               <option value="" disabled selected>Select a subject</option>
+                <!-- Add more options here -->
+            </select>
+            <button type="submit" ">Let's Go!</button>
+        </form>
+    </div>
+
+    <script>
+        // Get references to the select fields
+        const semesterSelect = document.getElementById('semester');
+        const subjectSelect = document.getElementById('subject');
+    
+        // Define the options for each semester
+        const semesterOptions = {
+            '3': [          
+                ['Logic Design', 'LD'],
+                ['Discrete Computational Structures', 'DCS'],
+                ['Object Oriented Programming', 'OOP'],
+                ['Principles of Programming Languages', 'PPL'],
+                ['Data and Computer Communication', 'DCC']
+            ],  // Options for Semester 3
+            '4': [            ['Microprocessors', 'MP'],
+                ['Computer Architecture and Organization', 'CAO'],
+                ['Automata Languages and Computations', 'ALC'],
+                ['Data Structures and Algorithms', 'DSA'],
+                ['Database Management Systems', 'DBMS']
+            ],  // Options for Semester 4
+            '5': [            ['System Programming', 'SP'],
+                ['Object Oriented Software Engineering', 'OOSE'],
+                ['Advanced Microprocessors and Microcontrollers', 'AMM'],
+                ['Computer Graphics', 'CG']
+            ],  // Options for Semester 5
+            '6': [            ['Computer Networks', 'CN'],
+                ['Compiler Construction', 'CC'],
+                ['Analysis and Design of Algorithms', 'ADA'],
+                ['Data Mining', 'DM'],
+                ['Operating Systems', 'OS'],
+                ['Neural Networks', 'NN']
+            ],  // Options for Semester 6
+            '7': [            ['Principles of Management', 'PM'],
+                ['Advanced Computer Networks', 'ACN'],
+                ['Cryptography and Network Security', 'CNS']
+            ],  // Options for Semester 7
+            '8': [            ['Advanced Architecture and Parallel Processing', 'AAPP']
+            ]  // Options for Semester 8
+            // Add more semesters and their options as needed
+        };
+    
+        // Update the subject options when the semester selection changes
+        semesterSelect.addEventListener('change', function () {
+            const selectedSemester = semesterSelect.value;
+            const options = semesterOptions[selectedSemester];
+    
+            // Clear existing options
+            subjectSelect.innerHTML = '';
+    
+            // Add new options
+            for (let i = 0; i < options.length; i++) {
+                const option = document.createElement('option');
+                option.value = options[i][1]; // Use the short code as the value
+                option.textContent = options[i][0]; // Use the full subject name as the display text
+                subjectSelect.appendChild(option);
+            }
+        });
+    
+        // Trigger the change event on page load to initialize the subject options
+        semesterSelect.dispatchEvent(new Event('change'));
+    </script>
+    
+</body>
